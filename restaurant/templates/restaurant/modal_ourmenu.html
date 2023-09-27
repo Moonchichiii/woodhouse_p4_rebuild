@@ -1,0 +1,43 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!--restaurant modal-->
+<div class="modal fade" id="menuModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="menuModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 menu-header" id="menuModalLabel">Our Menu</h1>
+            </div>
+            <div class="modal-body" id="menu-text">                
+                <h1>starters</h1>
+                <ul>
+                    <li>Jerusalem Artichoke Soup with Crumbled Wild Boar Sausages, Schnapps from Kyrkeby, Vissefjärda
+                    </li>
+                    <li>Lingonberries and Potatoes, Lingonberries Flavored with Ljungby Gin</li>
+                </ul>
+                <h2>Main Courses</h2>
+                <ul>
+                    <li>Freshly Picked Chanterelles from Småland Forests with Fresh Corn and Grilled Zucchini</li>
+                    <li>Pikeperch with Crayfish and Chanterelles, Butter-Baked Pointed Cabbage, Crayfish and Crown Dill
+                        Sauce</li>
+                    <li>Variation of Potatoes from Stellan in Bläsinge with Stewed Artichoke, Swede, and Summer Truffle
+                    </li>
+                    <li>Rooster from Stackvallen with Parsnips from Vassmolösa, Red Currants, and Tarragon from Our
+                        Garden</li>
+                </ul>
+                <h3>Cheese Course</h3>
+                <ul>
+                    <li>Bonnakringla with Vasen’s Priest Cheese and "Apple Jam - Make Do With What You Have"</li>
+                </ul>
+                <h4>Desserts</h4>
+                <ul>
+                    <li>Wild Strawberries with Pistachios, Fresh Cheese, and Honey from Our Hives</li>
+                </ul>
+            </div>
+        
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,12 @@
+core.Microsoft*
+core.mongo*
+core.python
+__pycache__/
+*.py[cod]
+cloudinary_python.txt
+.env
+*.pyc
+*.pyo
+db.sqlite3
+.DS_Store
+.vscode/

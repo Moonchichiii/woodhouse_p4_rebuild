@@ -1,0 +1,33 @@
+{% load static %}
+<!--contact-us-modal-->
+<div class="modal fade" id="contactModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="contactModal" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="contactModalLabel">Contact us</h1>          
+    </div>
+    <div class="modal-body">
+      <form id="contactUsForm">   
+        <div class="mb-3">
+            <label for="contact-fullname" class="form-label">Full Name:</label>
+            <input type="text" class="form-control" id="contact-fullname" name="contact-fullname">
+        </div>
+        <div class="mb-3">
+            <label for="contact-email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="contact-email" name="contact-email" autocomplete="off">              
+        </div>
+        <div class="mb-3">
+            <label for="contact-message" class="form-label">Message:</label>    
+            <textarea class="form-control" id="contact-message" rows="4" name="contact-message"></textarea>          
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Close</button>          
+            <button type="submit" class="btn btn-secondary btn-success">Send</button>          
+        </div>
+    </form>
+    <p><span id="Response-Status" aria-live="polite"><em></em></span></p>
+  </div>     
+  </div>
+</div>
+</div>

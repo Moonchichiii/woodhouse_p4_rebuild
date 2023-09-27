@@ -1,0 +1,41 @@
+{% load widget_tweaks %}
+<!--booking-modal-->
+<div class="modal fade" id="bookingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="bookingsModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="bookingModalLabel">Your Booking</h1>
+            </div>
+            <div class="modal-body">
+                
+                
+                    <form method="POST" action="{% url 'bookings' %}">
+                    {% csrf_token %}         
+
+                    {% for field in form %}
+                    
+                    <div class="mb-3">                     
+                    {{ field.label_tag }}
+
+                    {% render_field field class+="form-control" %}
+                    {{ field.errors }}
+                    
+                </div>
+                {% empty %}
+                {% endfor %}
+                    
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-danger"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary btn-success">Confirm Booking</button>
+                    </div>
+                  
+                </form>
+            </div>            
+            </div>            
+            </div>            
+        </div>
+    </div>
+</div>
