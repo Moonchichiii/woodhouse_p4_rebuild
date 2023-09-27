@@ -27,7 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 GOOGLE_API_KEY = config('GOOGLE_API_KEY')
-   
+origin = config('ORIGIN', default='')   
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': config('CLOUDINARY_API_KEY'),
@@ -35,11 +36,13 @@ CLOUDINARY_STORAGE = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-fn1i7lsh8lj.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['woodhouse-a901e0e256cb.herokuapp.com']
 
-CSRF_TRUSTED_ORIGINS = config('ORIGIN')
+
+CSRF_TRUSTED_ORIGINS = [origin] 
+
 
 # Application definition
 
