@@ -37,7 +37,7 @@ CLOUDINARY_STORAGE = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-d8gqerewy50.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['woodhouse-a901e0e256cb.herokuapp.com','8000-moonchichii-woodhousep4-d8gqerewy50.ws-eu105.gitpod.io']
 
 
 # Application definition
