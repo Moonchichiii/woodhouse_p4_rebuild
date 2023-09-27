@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from .forms import BookingsForm
+from django import forms
+from restaurant.forms import BookingsForm
 from restaurant.models import Bookings
-from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 
@@ -23,8 +24,7 @@ def booking_template(request):
             booking = form.save()
             return redirect('booking_confirmation', booking_id=booking.id)
     else:
-        form = BookingsForm()
-        print(form.errors)
+        form = BookingsForm()        
 
     context = {
         'form': form
