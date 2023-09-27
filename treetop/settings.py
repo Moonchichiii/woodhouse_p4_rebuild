@@ -39,8 +39,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-d8gqerewy50.ws-eu105.gitpod.io','woodhouse-a901e0e256cb.herokuapp.com']
 
-CSFR_TRUSTED_ORIGINS = config('ORIGIN')
-
+#CSFR_TRUSTED_ORIGINS = config('ORIGIN')
+CSFR_TRUSTED_ORIGINS = ['https://8000-moonchichii-woodhousep4-d8gqerewy50.ws-eu105.gitpod.io']
 
 # Application definition
 
