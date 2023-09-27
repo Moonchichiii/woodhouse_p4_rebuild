@@ -1,11 +1,3 @@
-from django.test import TestCase
-from django import forms
-from django.forms import ModelForm
-from .models import Bookings
-
-# Create your tests here.
-
-
 class BookingsForm(forms.ModelForm):
    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))    
    class Meta:
