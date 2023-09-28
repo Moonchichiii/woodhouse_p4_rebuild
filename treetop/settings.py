@@ -38,7 +38,7 @@ CLOUDINARY_STORAGE = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-fn1i7lsh8lj.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-cu0d6f0aeq9.ws-eu105.gitpod.io']
 
 
 CSRF_TRUSTED_ORIGINS = [origin] 

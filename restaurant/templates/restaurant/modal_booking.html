@@ -12,16 +12,14 @@
                 
                 
                     <form method="POST" action="{% url 'bookings' %}">
+                    <div class="mb-3">                     
                     {% csrf_token %}         
 
                     {% for field in form %}
-                    {{ field|crispy }}
-                    
-                    <div class="mb-3">                     
-                   
+                    {{ field|crispy }}                  
                 </div>
-                {% empty %}
                 {% endfor %}
+       
                     
                     
                     <div class="modal-footer">
@@ -31,9 +29,6 @@
                     </div>
                   
                 </form>
-            </div>            
-            </div>            
-            </div>            
+            </div>
         </div>
     </div>
-</div>
