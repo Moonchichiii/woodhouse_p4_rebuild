@@ -33,5 +33,5 @@ class BookingsForm(forms.ModelForm):
         raise forms.ValidationError("Sorry fully booked! Please choose time or date.")
 
 class CancelBookingForm(forms.Form):
-    booking_id = forms.CharField(label='Booking ID', max_length=80)
+    booking_id = forms.IntegerField(label='Booking ID')
             
