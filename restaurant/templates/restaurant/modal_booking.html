@@ -10,16 +10,23 @@
             </div>
             <div class="modal-body">
                 
-                
                     <form method="POST" action="{% url 'bookings' %}">
-                    <div class="mb-3">                     
-                    {% csrf_token %}         
+                            {% csrf_token %}         
+        
+                            {% for field in form %}
+                            
+                            <div class="mb-3">                     
+                            {{ field.label_tag }}
+        
+                            {% render_field field class+="form-control" %}
+                            
+                            {{ field.errors }}
+                            
+                        </div>
+                        {% empty %}
+                        {% endfor %}
 
-                    {% for field in form %}
-                    {{ field|crispy }}                  
-                </div>
-                {% endfor %}
-       
+                
                     
                     
                     <div class="modal-footer">

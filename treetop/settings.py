@@ -38,12 +38,12 @@ CLOUDINARY_STORAGE = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-cu0d6f0aeq9.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-qh0oyyhaor6.ws-eu105.gitpod.io']
 
 
 CSRF_TRUSTED_ORIGINS = [origin] 
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'crispy_forms',
+    'crispy_bootstrap5',    
     'widget_tweaks',
     'django.contrib.staticfiles',
     'restaurant',
