@@ -46,8 +46,8 @@ def booking_confirmation(request, booking_id):
 
 
 def cancel_booking(request):
-    if request.method == 'DELETE':
-        form = CancelBookingForm(request.DELETE)
+    if request.method == 'POST':
+        form = CancelBookingForm(request.POST)
         if form.is_valid():
             booking_id = form.cleaned_data['booking_id']
            
@@ -69,4 +69,5 @@ def cancel_booking(request):
 
     def cancel_confirmation(request, booking_id):
         cancelled = get_object_or_404(Bookings, id=booking_id)
-        return render(request, 'restaurant/confirm.html', {'booking': cancelled})
+        return render(request, 'restaurant/cancelled.html', context)
+        return render(request, 'restaurant/confirm.html', {'cancel_booking': cancelled})
