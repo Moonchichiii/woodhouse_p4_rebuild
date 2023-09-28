@@ -35,7 +35,7 @@
    --hero-text:#ffffff;  
    --footer:#d6d6d6;    
    --Button2: #306135;  
-   --button-hover: #fc7a7a;  
+   --warning-text: #fc7a7a;  
    --button-cancel: #fc7a7a;
    --social: #fc7a7a;  
  }
@@ -205,6 +205,9 @@
  
  /* --------- 9. Modals ------ */
  
+ .warning-message {
+  color:var(--warning-text);
+ }
  
  /* --------- Menu Modal ------ */
  #menu-text li {

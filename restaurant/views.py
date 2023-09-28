@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django import forms
+from django.contrib import messages
 from restaurant.forms import BookingsForm
 from restaurant.models import Bookings
 
@@ -25,9 +26,7 @@ def booking_template(request):
             return redirect('booking_confirmation', booking_id=booking.id)
     
         else:
-            messages.error(request,)
-
-                    
+            messages.error(request,"Sorry fully booked! Please choose time or date.")                    
     else:
         form = BookingsForm()        
 

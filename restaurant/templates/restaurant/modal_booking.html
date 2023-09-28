@@ -10,33 +10,27 @@
             </div>
             <div class="modal-body">
                 
-                    <form method="POST" action="{% url 'bookings' %}">
-                            {% csrf_token %}         
-        
-                            {% for field in form %}
-                            
-                            <div class="mb-3">                     
-                            {{ field.label_tag }}
-        
-                            {% render_field field class+="form-control" %}
-                            
+                {% for message in messages %}
+                <h5 class="warning-message"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+                {% endfor %}
 
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                        {% endfor %}
-
-                            {% if field.errors %}
-                            <div class="alert alert-danger" role="alert">                                
-                            </div>
-                            {% endif %}
-                            
+                <form method="POST" action="{% url 'bookings' %}">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="mb-3">
+                        {{ field.label_tag }}
+                        {% render_field field class+="form-control" %}
+                        
+                        
+                        {% if field.errors %}
+                        <div class="alert alert-danger" role="alert">                            
                         </div>
-                        {% empty %}
-                        {% endfor %}
+                        {% endif %}                           
+                        </div>
+                        
+                    {% empty %}
+                    {% endfor %}                    
 
-                
-                    
-                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-danger"
                             data-bs-dismiss="modal">Close</button>
