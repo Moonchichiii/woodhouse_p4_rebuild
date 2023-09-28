@@ -31,4 +31,7 @@ class BookingsForm(forms.ModelForm):
     
     if existing_bookings_count + number_of_guests > max_guests:
         raise forms.ValidationError("Sorry fully booked! Please choose time or date.")
+
+class CancelBookingForm(forms.Form):
+    booking_id = forms.CharField(label='Booking ID', max_length=80)
             

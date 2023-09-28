@@ -9,9 +9,8 @@
   8. Management Page
   9. Booking Modal / Cancel Modal
  10. Confirmation page
+ 11. Cancelled page   
  /* CSS Structure end----------------*/
-
-
  @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap");
 
  /* --------- 1. Colours ------ */
@@ -249,3 +248,23 @@
    max-width: 50%;
    text-align: center;
  }
+
+/* --------- 11. Cancelled page  ------ */
+
+ .cancelled-booking-confirm {
+
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+
+  .cancelled-booking {
+    margin-top: 2%;
+    font-size: 0.8rem;
+    font-weight: 200;
+    max-width: 50%;
+    text-align: center;
+  }

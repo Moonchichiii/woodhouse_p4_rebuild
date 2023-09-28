@@ -1,7 +1,54 @@
-{% include "restaurant/modal_restaurant.html" %}
+{% load widget_tweaks %} {% load crispy_forms_tags %}
 
-{% include "restaurant/modal_ourmenu.html" %}
+<!--Cancel-modal-->
+<div class="modal fade" id="cancelModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="cancelModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cancelModalLabel">Cancel your reservation</h1>
+            </div>
+            <div class="modal-body">
 
-{% include "restaurant/modal_contactus.html" %}
+                {% for message in messages %}
+                <h5 class="warning-message" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                </h5>
+                {% endfor %}
 
-{% include "restaurant/modal_booking.html" %}
+                <div class="mb-3">
+                    <form method="post">
+
+                        {% csrf_token %}
+                        {% for field in cancel_form %}
+                        <div class="mb-3">
+                            {{ field.label_tag }}
+                            {% render_field field class+="form-control" %}
+
+
+                            {% if field.errors %}
+                            <div class="alert alert-danger" role="alert">
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        {% empty %}
+                        {% endfor %}
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary btn-success"
+                        data-bs-dismiss="modal">Return</button></a>
+
+                    <a href="cancel/"><button type="submit" class="btn btn-sm btn-danger">Cancel your
+                            reservation</button></a>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

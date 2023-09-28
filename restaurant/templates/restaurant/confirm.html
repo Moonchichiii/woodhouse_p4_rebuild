@@ -20,14 +20,16 @@
      <p>{{ booking.time }} </p>
      <h5>Contact email</h5> 
      <p>{{ booking.email }}</p>
-
-     
+    <h6>Your unique booking id:</h6>
+     <p>{{ booking.id }}</p>
     <a href="/return"><button class="btn btn-lg btn-success">Return</button></a>
     
     <div class="cancel-information"><p>
         If, for any reason, you can't make it, 
         you can cancel your reservation on the main page using the 
-        Cancel Booking button at the bottom of the main page.</p>    
+        Cancel a reservation button, at the bottom of the main page.
+        just provide your unique id.</p>
+        <p>booking id: {{ booking.id }}</p>    
     </div>
     </div>
 

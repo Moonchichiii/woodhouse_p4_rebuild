@@ -16,7 +16,7 @@
 
                 <form method="POST" action="{% url 'bookings' %}">
                     {% csrf_token %}
-                    {% for field in form %}
+                    {% for field in booking_form %}
                     <div class="mb-3">
                         {{ field.label_tag }}
                         {% render_field field class+="form-control" %}
