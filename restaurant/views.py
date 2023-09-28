@@ -43,31 +43,26 @@ def booking_confirmation(request, booking_id):
     return render(request, 'restaurant/confirm.html', {'booking': confirmation})
 
 
-
-
-def cancel_booking(request):
-    if request.method == 'POST':
-        form = CancelBookingForm(request.POST)
-        if form.is_valid():
-            booking_id = form.cleaned_data['booking_id']
-           
-            try:
-                cancel = Bookings.objects.get(id=booking_id)
-                cancel.delete()
-                messages.success(request, 'Your booking is cancelled.')
-                return redirect('index')
-            
-            except Bookings.DoesNotExist:
-                    messages.error(request,"Booking 'ID' not found, try again!")                    
-    else:
-        form = CancelBookingForm()        
-
+def cancel_booking(request):                      
     context = {
         'cancel_form': form
     }
     return render(request, 'restaurant/cancelled.html', context)
 
-    def cancel_confirmation(request, booking_id):
+
+
+def cancel_confirmation(request, booking_id):
+    if request.method == 'POST':
+        form = CancelBookingForm(request.POST)
+        if form.is_valid():
+            booking_id = form.cleaned_data['booking_id']           
+            try:
+                cancel = Bookings.objects.get(id=booking_id)
+                cancel.delete()
+                messages.success(request, 'Your booking is cancelled.')
+                return redirect('cancel_confirmation', booking_id=booking_id)  
+            
+            except Bookings.DoesNotExist:
+                    messages.error(request,"Booking 'ID' not found, try again!")  
         cancelled = get_object_or_404(Bookings, id=booking_id)
-        return render(request, 'restaurant/cancelled.html', context)
-        return render(request, 'restaurant/confirm.html', {'cancel_booking': cancelled})
+        return render(request, 'restaurant/confirm.html', {'cancel_confirmation': cancelled})
