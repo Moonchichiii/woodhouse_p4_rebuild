@@ -43,7 +43,8 @@ ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-fn1i7lsh8lj.ws-eu105.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = [origin] 
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # Application definition
 
