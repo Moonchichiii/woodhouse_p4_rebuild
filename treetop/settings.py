@@ -43,6 +43,7 @@ ALLOWED_HOSTS = ['woodhouse-a901e0e256cb.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [origin] 
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Application definition
 
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'crispy_forms',
     'widget_tweaks',
     'django.contrib.staticfiles',
     'restaurant',
