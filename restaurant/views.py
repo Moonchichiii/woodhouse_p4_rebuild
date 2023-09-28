@@ -23,6 +23,11 @@ def booking_template(request):
         if form.is_valid():
             booking = form.save()
             return redirect('booking_confirmation', booking_id=booking.id)
+    
+        else:
+            messages.error(request,)
+
+                    
     else:
         form = BookingsForm()        
 

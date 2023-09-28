@@ -122,6 +122,8 @@ whitenoise==5.3.0
 <details>
 <summary>Good documentation and tutorials</summary>
 
+- https://stackoverflow.com/questions/68762265/django-aggregate-sum-for-each-user
+
 - https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html
 
 - https://overiq.com/django-1-10/django-form-basics/ 

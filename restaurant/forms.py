@@ -1,4 +1,5 @@
 from django import forms
+from django.db import models
 from .models import Bookings
 
 class BookingsForm(forms.ModelForm):
@@ -15,15 +16,19 @@ class BookingsForm(forms.ModelForm):
             'email',
             'phone_number',
             'comment']
+    
 
-
-def clean(self):
+   def clean(self):
     cleaned_data = super().clean()
     date = cleaned_data.get("date")
     time = cleaned_data.get("time")
+    number_of_guests = cleaned_data.get("number_of_guests")
+
+    max_guests = 20 
+
+
+    existing_bookings_count = Bookings.objects.filter(date=date, time=time).aggregate(total_guests=models.Sum('number_of_guests'))['total_guests'] or 0
     
-    existing = Bookings.objects.filter(date=date, time=time).exists()
-    
-    if existing:
-        raise forms.ValidationError("Sorry, choose another date or time!")
+    if existing_bookings_count + number_of_guests > max_guests:
+        raise forms.ValidationError("Sorry fully booked! Please choose time or date.")
             
