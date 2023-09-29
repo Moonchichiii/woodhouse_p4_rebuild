@@ -1,8 +1,8 @@
 {% load static %}
 <!--Our menu modal-->
 
-<div class="modal fade" id="menuModal" data-bs-backdrop="static" 
-data-bs-keyboard="false" tabindex="-1" aria-labelledby="menuModal" aria-hidden="true">
+<div class="modal fade" id="menuModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="menuModal" aria-hidden="true">
 
     <div class="modal-dialog">
 
@@ -13,51 +13,50 @@ data-bs-keyboard="false" tabindex="-1" aria-labelledby="menuModal" aria-hidden="
                 <h1 class="modal-title fs-5 menu-header" id="menuModalLabel">Our Menu</h1>
             </div>
             <div class="modal-body" id="menu-text">
-                
+
                 <h3 class="menu-headers">Starters</h3>
-                    <ul>
-                        {% for starter in starters %}
+                <ul>
+                    {% for starter in starters %}
 
-                            <li class="menu-items">
-                                {{ starter.name }} <br>
-                                {% if currency_selector == "GBP" %} 
-                                ${{ starter.price }} <br> 
-                                {% if currency_selector == "EUR" %} 
-                                ${{ starter.price }} <br>
-                                {{% else %}}                            
-                                {% endif %}
-                            </li>
-                            {% endfor %}
-                    </ul>
-
-                    <h4 class="menu-headers">Main Courses</h4>
-                    <ul>
-                        {% for main_course in main_course %}
-
-                            <li class="menu-items">{{ main_course.name }} <br> ${{ main_course.price }}<br></li>
-
-                      
-                    </ul>
-                    <h4 class="menu-headers">Desserts</h4>
-                    <ul>
-                        {% for dessert in desserts %}
-
-                            <li class="menu-items">{{ dessert.name }} <br> ${{ dessert.price }}
-                               
-                                <br></li>
-                            
+                    <li class="menu-items">
+                        {{ starter.name }} <br> ${{ starter.price }} <br>
                         {% endfor %}
-                    </ul>
-     
+                    </li>
 
-        
+                </ul>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Close</button>
+                <h4 class="menu-headers">Main Courses</h4>
+                <ul>
+                    {% for main_course in main_course %}
+
+                    <li class="menu-items">{{ main_course.name }} <br> ${{ main_course.price }}<br>
+                        {% endfor %}
+                    </li>
+
+
+                </ul>
+                <h4 class="menu-headers">Desserts</h4>
+                <ul>
+                    {% for dessert in desserts %}
+
+                    <li class="menu-items">{{ dessert.name }} <br> ${{ dessert.price }}
+
+                        <br>
+                    </li>
+
+                    {% endfor %}
+                </ul>
+
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 </html>
 </body>
