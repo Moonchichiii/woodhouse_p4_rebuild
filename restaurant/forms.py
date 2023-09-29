@@ -32,7 +32,7 @@ class BookingsForm(forms.ModelForm):
     cleaned_data = super().clean()
     date = cleaned_data.get("date")
     time = cleaned_data.get("time")
-    number_of_guests = cleaned_data.get("number_of_guests")
+    number_of_guests = cleaned_data.get("number_of_guests", 0)
 
     max_guests = 20 
 

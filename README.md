@@ -1,6 +1,5 @@
 # woodhouse_p4_rebuild | ***A high-end dining experience in the treetops***
 #### [***Visit the TreeTopRestaurant Website here***](https://woodhouse-a901e0e256cb.herokuapp.com/)
-- Finally got it up and running after a few attempts. I've been really struggling to make it work.
 
 ***Link to the project i gave up on to many misstakes from begining***
 - https://github.com/Moonchichiii/woodhouse_p4 
@@ -36,17 +35,18 @@ As a user, I would like to book one or more guests for a meal in a restaurant at
 
 ## Layout Plan
 
-- Given the time limit, a single-page layout, with modals to house all elements.
+- Given the time limit, a single-page layout, with modals to house all elements, was not the best idea now i know. 
 
- <p></p>
 
 ### Main Page Content:
 
 1. Navigation Menu (Navbar)
-2. "Book a Table" Button (Opens a Booking Modal)
-3. "Cancel a Booking" Button (Opens a Cancel Modal)
+2. "Book a Table" (Opens a Booking Modal)
+3. "Cancel a Booking" (Opens a Cancel Modal)
 4. Map Display
-5. Social Media Icons
+5. Management login
+6. Social Media Icons
+
 
 ### Additional Page:
 
@@ -63,7 +63,7 @@ As a user, I would like to book one or more guests for a meal in a restaurant at
 
 - **Wireframe**: Created using Axure RP10 to visualize the structure and layout of the website, understanding the user flow and placement of elements on the website.
 
-![First planning of the layout](readmecontent/images/Planning_wireframe.png)
+![Alt text](readmecontent/final.png)
 </details>
 
 ---
@@ -81,9 +81,26 @@ As a user, I would like to book one or more guests for a meal in a restaurant at
 
 # Testing 
 
+
+
+
+
+## Coverage testing results 
+
+## Built in Unitest 
+
+
 ## Validator Testing
 
 
+
+
+<details>
+<summary>css-validator</summary>
+
+![Alt text](readmecontent/W3CCSSvalidate.png)
+
+</details>
 
 
 
