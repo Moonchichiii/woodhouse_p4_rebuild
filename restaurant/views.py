@@ -19,8 +19,7 @@ def index(request):
     context = {
         'key': key,
         'booking_form': booking_form,
-        'cancel_form': cancel_form,
-        
+        'cancel_form': cancel_form,        
         'starters' : starters, 
         'main_course' : main_course,
         'desserts' : desserts, 
@@ -37,7 +36,7 @@ def booking_template(request):
             return redirect('booking_confirmation', booking_id=booking.id)
     
         else:
-            messages.error(request,"Sorry fully booked! Please choose time or date.")                    
+            messages.error(request,"Sorry fully booked! Please choose another time or date.")                    
     else:
         form = BookingsForm()        
 

@@ -11,7 +11,7 @@
             <div class="modal-body">
                 
                 {% for message in messages %}
-                <h5 class="warning-message"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+                <h6 class="warning-message"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h6>
                 {% endfor %}
 
                 <form method="POST" action="{% url 'bookings' %}">
