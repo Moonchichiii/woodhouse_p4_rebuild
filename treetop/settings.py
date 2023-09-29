@@ -32,8 +32,6 @@ GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 origin = config('ORIGIN', default='')
 
 
-
-
 ANYMAIL = {
     'MAILGUN_API_KEY': config('MAILGUN_API_KEY'),
     'MAILGUN_SENDER_DOMAIN': config('MAILGUN_DOMAIN'),
@@ -41,7 +39,7 @@ ANYMAIL = {
 
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 
-DEFAULT_FROM_EMAIL = config('MAILGUN_FROM_EMAIL')  
+DEFAULT_FROM_EMAIL = config('MAILGUN_FROM_EMAIL')
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
@@ -56,7 +54,7 @@ ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-qh0oyyhaor6.ws-eu105.gitpod.io']
 
 X_FRAME_OPTIONS = 'sameorigin'
 
-CSRF_TRUSTED_ORIGINS = [origin] 
+CSRF_TRUSTED_ORIGINS = [origin]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
@@ -71,7 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'anymail',
     'crispy_forms',
-    'crispy_bootstrap5',    
+    'crispy_bootstrap5',
     'widget_tweaks',
     'django.contrib.staticfiles',
     'restaurant',
@@ -96,7 +94,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [                
+            'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -113,7 +111,6 @@ WSGI_APPLICATION = 'treetop.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
-
 
 
 # Password validation

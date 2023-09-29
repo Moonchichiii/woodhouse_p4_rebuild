@@ -92,7 +92,7 @@ def response_message(user_email):
               "text": "We received your message and will get back to you, as soon as possible."})
 
 
-def contactus(request):
+def contactus(request):    
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
