@@ -1,16 +1,20 @@
 from django.test import TestCase
 from django import forms
 from django.forms import ModelForm
-from .forms import BookingsForm
+from .forms import BookingsForm, CancelBookingForm
 from .models import Bookings
 from datetime import datetime
 
 
 
-# Create your tests here.
 
+# Create your tests here.
+class landing_page(TestCase):
+    def test_landing_page(self):
+        response = self.client.get('') 
+        self.assertEqual(response.status_code, 200)
+        
 class BookingsFormTest(TestCase):
-    
     def test_maximum_number_of_guests(self):
         
         Bookings.objects.create(
@@ -40,15 +44,6 @@ class BookingsFormTest(TestCase):
         self.assertEqual(form.errors['__all__'], ['Sorry fully booked! Please choose another time or date.'])
 
 
-class landing_page(TestCase):
-    
-    def setUp(self):
 
-
-    def test_landing_page(self):
-        response = self.client.get(reverse('index'))
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed()
 
 
