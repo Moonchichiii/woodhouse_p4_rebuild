@@ -10,8 +10,9 @@
   9. Booking Modal / Cancel Modal
  10. Confirmation page
  11. Cancelled page   
+ 12. Menu Page
  /* CSS Structure end----------------*/
- @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto&display=swap");
+ @import url('https://fonts.googleapis.com/css2?family=Alice&family=Inclusive+Sans:ital@1&family=Quattrocento+Sans&family=Roboto:ital@1&display=swap');
 
  /* --------- 1. Colours ------ */
  *,
@@ -267,4 +268,17 @@
     font-weight: 200;
     max-width: 50%;
     text-align: center;
+  }
+
+
+  /* --------- 12. Menu page  ------ */
+
+  .menu-header {
+        
+    font-family: 'Quattrocento Sans', sans-serif;
+    
+  }
+
+  .menu-items {
+    font-family: 'Alice', serif;
   }
