@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.conf import settings
 from django import forms
 from django.contrib import messages
@@ -79,26 +79,27 @@ def cancelled_confirmation(request):
     return render(request, 'restaurant/cancelled.html')
 
 
-def response_message():
-    return requests.post(
-         f"https://api.mailgun.net/v3/{settings.MAILGUN_DOMAIN}/messages",
+def response_message(user_email):
+   return requests.post(
+        f"https://api.mailgun.net/v3/{settings.MAILGUN_DOMAIN}/messages",
         auth=("api", settings.MAILGUN_API_KEY),
         data={"from": f"Excited User <{settings.MAILGUN_FROM_EMAIL}>",
               "to": [user_email],
               "subject": "Thank you for contacting us!",
-              "text": "We recevied your message and will get back as soon as possible."})
+              "text": "We received your message and will get back to you, as soon as possible."})
+                            
 
 
 def contactus(request):
     if request.method == 'POST':
-       form = ContactForm(request.POST)
-       if form.is_valid():
-        user_email = form.cleaned_data['email']
-        response_message(user_email)
-        return HttpResponse('Message sent...')
-
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            user_email = form.cleaned_data['email']
+            response_message(user_email)
+            messages.success(request, 'Message sent...')
+            return render(request, 'restaurant/index.html')
     else:
-        contactus = ContactForm()
-        return render(request, 'modal_contactus.html', {'contactusform' : contactus})
+        form = ContactForm()
+    return render(request, 'modal_contactus.html', {'contactusform': form})
 
 
