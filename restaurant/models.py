@@ -10,31 +10,11 @@ class MenuChangeAndPrices(models.Model):
 
 
     CATEGORY_OPTIONS = [
-        (STARTER, ''),
+        (STARTER, 'Starter'),
         (MAIN_COURSE, 'Main Course'),
         (DESSERT, 'Dessert'),
     ]
-    TIME_OPTIONS = [
-    ('17:00', '5:00 PM'),
-    ('17:30', '5:30 PM'),
-    ('18:00', '6:00 PM'),
-    ('18:30', '6:30 PM'),
-    ('19:00', '7:00 PM'),
-    ('19:30', '7:30 PM'),
-    ('20:00', '8:00 PM'),
-    ('20:30', '8:30 PM'),
-    ('21:00', '9:00 PM'),
-    ('21:30', '9:30 PM'),
-    ('22:00', '10:00 PM'),
-    ]
     
-    number_of_guests = models.PositiveIntegerField(choices=GUEST_OPTIONS)
-    date = models.DateField()
-    time = models.CharField(max_length=5, choices=TIME_OPTIONS)
-    first_name = models.CharField(max_length=50, null=False, blank=False)
-    last_name = models.CharField(max_length=50, null=False, blank=False)
-    address = models.CharField(max_length=80, null=False, blank=False)
-    email = models.EmailField(max_length=50, null=False, blank=False)
     name = models.CharField(max_length=180,)
     catecory = models.CharField(max_length=80, choices=CATEGORY_OPTIONS)
     price = models.DecimalField(max_digits=6, decimal_places=2)
