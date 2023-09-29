@@ -81,14 +81,14 @@ def cancelled_confirmation(request):
 
 def response_message(user_email):
     
-    mailgun_api_key = settings.ANYMAIL['MAILGUN_API_KEY']
     mailgun_domain = settings.ANYMAIL['MAILGUN_SENDER_DOMAIN']
+    mailgun_api_key = settings.ANYMAIL['MAILGUN_API_KEY']
     mailgun_from_email = settings.DEFAULT_FROM_EMAIL
 
     return requests.post(
-        f"https://api.mailgun.net/v3/{settings.MAILGUN_DOMAIN}/messages",
-        auth=("api", settings.MAILGUN_API_KEY),
-        data={"from": f"Excited User <{settings.MAILGUN_FROM_EMAIL}>",
+       f"https://api.mailgun.net/v3/{mailgun_domain}/messages",
+        auth=("api", mailgun_api_key),
+        data={"from": f"Excited User <{mailgun_from_email}>",
               "to": [user_email],
               "subject": "Thank you for contacting us!",
               "text": "We received your message and will get back to you, as soon as possible."})

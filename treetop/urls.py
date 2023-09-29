@@ -31,5 +31,6 @@ urlpatterns = [
     path('return/', index, name='index'),
 
     path('contact/', contactus, name='contactus'),
+    path("anymail/", include("anymail.urls")),
     
 ]
