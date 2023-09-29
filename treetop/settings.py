@@ -29,12 +29,19 @@ SECRET_KEY = config('SECRET_KEY')
 
 GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 
-origin = config('ORIGIN', default='')   
+origin = config('ORIGIN', default='')
 
-MAILGUN_DOMAIN = config('MAILGUN_DOMAIN')
-MAILGUN_API_KEY = config('MAILGUN_API_KEY')
-MAILGUN_FROM_EMAIL = config('MAILGUN_FROM_EMAIL')
 
+
+
+ANYMAIL = {
+    'MAILGUN_API_KEY': config('MAILGUN_API_KEY'),
+    'MAILGUN_SENDER_DOMAIN': config('MAILGUN_DOMAIN'),
+}
+
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+
+DEFAULT_FROM_EMAIL = config('MAILGUN_FROM_EMAIL')  
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),

@@ -122,6 +122,8 @@ whitenoise==5.3.0
 <details>
 <summary>Good documentation and tutorials</summary>
 
+- https://github.com/anymail/django-anymail
+
 - https://stackoverflow.com/questions/7304248/how-should-i-write-tests-for-forms-in-django
 
 - https://stackoverflow.com/questions/68762265/django-aggregate-sum-for-each-user
