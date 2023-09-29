@@ -9,7 +9,23 @@
                 <h1 class="modal-title fs-5 menu-header" id="menuModalLabel">Our Menu</h1>
             </div>
             <div class="modal-body" id="menu-text">                
-                <h1>starters</h1>
+
+
+
+                {% for message in messages %}
+                <h5 class="warning-message"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+                {% endfor %}
+                        
+
+                    {% empty %}
+                    {% endfor %}                    
+
+
+                    {% for message in messages %}
+                    <h5 class="warning-message"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h5>
+                    {% endfor %}
+    
+               <h2>starters</h2>
                 <ul>
                     <li><p>starter_1</p>
                     </li>
