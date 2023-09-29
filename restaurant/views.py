@@ -16,6 +16,7 @@ def index(request):
     starters = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.STARTER)
     main_course = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.MAIN_COURSE)
     desserts = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.DESSERT)
+    currency_selector = "GBP" "EUR"
     context = {
         'key': key,
         'booking_form': booking_form,
@@ -23,6 +24,7 @@ def index(request):
         'starters' : starters, 
         'main_course' : main_course,
         'desserts' : desserts, 
+        'currency_selector' : currency_selector,
         
     }
     return render(request, 'restaurant/index.html', context)

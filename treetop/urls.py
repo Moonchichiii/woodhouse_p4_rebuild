@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from restaurant.views import index, booking_template, booking_confirmation,cancel_booking, cancelled_confirmation
 
 
@@ -29,4 +29,5 @@ urlpatterns = [
     path('cancelled_confirmation/', cancelled_confirmation, name='cancelled_confirmation'),
     
     path('return/', index, name='index'),
+    
 ]
