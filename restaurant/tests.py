@@ -1,34 +1,44 @@
 from django.test import TestCase
 from django import forms
 from django.forms import ModelForm
+
+from .froms import BookingsForm 
 from .models import Bookings
+
+from datetime import datetime, timedelta
 
 # Create your tests here.
 
 
-class BookingsForm(forms.ModelForm):
-   date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))    
-   class Meta:
-        model = Bookings
-        fields = [
-            'number_of_guests',
-            'date',
-            'time',
-            'first_name',
-            'last_name',
-            'address',
-            'email',
-            'phone_number',
-            'comment']
-
-
-def clean(self):
-    cleaned_data = super().clean()
-    date = cleaned_data.get("date")
-    time = cleaned_data.get("time")
+class BookingsFormTest(TestCase):
     
-    existing = Bookings.objects.filter(date=date, time=time).exists()
-    
-    if existing:
-        raise forms.ValidationError("Sorry, choose another date or time!")
+    def test_maximum_number_of_guests(self):
+
+        Bookings.objects.create(
+
+            number_of_guests=15,
+            date=datetime.today(),
+            time= '17:00',
+            first_name= 'eva',
+            last_name= 'nilsson',
+            address= '560 street',
+            email='eva.n@gmail.com',
+            phone_number= '23134124124'
             
+            )
+
+
+    form_data = {
+            'number_of_guests': 15,
+            'date': datetime.today(),
+            'time' :'17:00',
+            'first_name': 'eva',
+            'last_name': 'nilsson',
+            'address' : '560 street',
+            'email' :'eva.n@gmail.com',
+            'phone_number' :'23134124124',
+    }
+
+    form = BookingsForm(data=form_data)
+    self.assertFalse(form.is_valid())
+    self.assertEqual(form.errors['__all__'], ['Sorry fully booked! Please choose another time or date.'])
