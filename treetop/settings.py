@@ -26,8 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
+
 GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+
 origin = config('ORIGIN', default='')   
+
+MAILGUN_DOMAIN = config('MAILGUN_DOMAIN')
+MAILGUN_API_KEY = config('MAILGUN_API_KEY')
+MAILGUN_FROM_EMAIL = config('MAILGUN_FROM_EMAIL')
+
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
