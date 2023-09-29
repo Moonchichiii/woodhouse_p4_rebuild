@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django import forms
 from django.contrib import messages
-from restaurant.forms import BookingsForm, CancelBookingForm
+from restaurant.forms import BookingsForm, CancelBookingForm , ContactForm
 from restaurant.models import Bookings, MenuChangeAndPrices
 
 
@@ -74,4 +74,12 @@ def cancelled_confirmation(request):
     return render(request, 'restaurant/cancelled.html')
   
 
-       
+def contactus(request):
+    if request.method == 'POST':
+       form = ContactForm(request.POST)
+       if form.is_valid():
+        return HttpResponse('Message sent...')
+
+    else:
+        form = ContactForm()
+        return render(request, 'modal_contactus.html', {'form' : form})

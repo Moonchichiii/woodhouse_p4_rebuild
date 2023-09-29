@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from restaurant.views import index, booking_template, booking_confirmation,cancel_booking, cancelled_confirmation
+from restaurant.views import index, booking_template, booking_confirmation,cancel_booking, cancelled_confirmation , contactus
 
 
 urlpatterns = [
@@ -29,5 +29,7 @@ urlpatterns = [
     path('cancelled_confirmation/', cancelled_confirmation, name='cancelled_confirmation'),
     
     path('return/', index, name='index'),
+
+    path('contact/', contactus, name='contactus'),
     
 ]
