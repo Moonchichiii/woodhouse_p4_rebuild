@@ -36,10 +36,11 @@ CLOUDINARY_STORAGE = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # set to false before deploy!
 
 ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-qh0oyyhaor6.ws-eu105.gitpod.io']
 
+#X_FRAME_OPTIONS = 'sameorigin' unblock before deploy. 
 
 CSRF_TRUSTED_ORIGINS = [origin] 
 
