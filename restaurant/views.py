@@ -3,19 +3,28 @@ from django.conf import settings
 from django import forms
 from django.contrib import messages
 from restaurant.forms import BookingsForm, CancelBookingForm
-from restaurant.models import Bookings
+from restaurant.models import Bookings, MenuChangeAndPrices
 
 
 # Create your views here.
 
 def index(request):
+    
     key = settings.GOOGLE_API_KEY
     booking_form = BookingsForm()
     cancel_form = CancelBookingForm()
+    starters = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.STARTER)
+    main_course = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.MAIN_COURSE)
+    desserts = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.DESSERT)
     context = {
         'key': key,
         'booking_form': booking_form,
         'cancel_form': cancel_form,
+        
+        'starters' : starters, 
+        'main_course' : main_course,
+        'desserts' : desserts, 
+        
     }
     return render(request, 'restaurant/index.html', context)
 

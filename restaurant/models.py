@@ -16,7 +16,7 @@ class MenuChangeAndPrices(models.Model):
     ]
     
     name = models.CharField(max_length=180,)
-    catecory = models.CharField(max_length=80, choices=CATEGORY_OPTIONS)
+    category = models.CharField(max_length=80, choices=CATEGORY_OPTIONS)
     price = models.DecimalField(max_digits=6, decimal_places=2)
    
    

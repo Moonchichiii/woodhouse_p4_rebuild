@@ -9,49 +9,35 @@
                 <h1 class="modal-title fs-5 menu-header" id="menuModalLabel">Our Menu</h1>
             </div>
             <div class="modal-body" id="menu-text">
+                
                 <h2>starters</h2>
-                {% for starter in staters %}
+                    <ul>
+                        {% for starter in starters %}
 
-                <ul>
-                    <li>{{ starter.name }}
-                        <p>{{ starter.price }}</p>
-                    </li>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
-                </ul>
-                <h2>Main Courses</h2>
-                <ul>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
-                    <li>
-                        <p>Main_4</p>
-                    </li>
-                </ul>
-                <h3>Cheese Course</h3>
-                <ul>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
-                </ul>
-                <h4>{{ booking.email }}</h4>
-                <ul>
-                    <li>
-                        <p>{{ booking.email }}</p>
-                    </li>
+                            <li>{{ Starter.name }} - ${{ Starter.price }}</li>
 
+                        {% endfor %}
+                    </ul>
 
-                    {% endfor %}
-                </ul>
+                    <h2>Main Courses</h2>
+                    <ul>
+                        {% for main_course in main_course %}
 
-            </div>
+                            <li>{{ Starter.name }} - ${{ Starter.price }}</li>
+
+                        {% endfor %}
+                    </ul>
+                    <h2>Desserts</h2>
+                    <ul>
+                        {% for dessert in desserts %}
+
+                            <li>{{ Starter.name }} - ${{ Starter.price }}</li>
+
+                        {% endfor %}
+                    </ul>
+     
+
+        
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Close</button>
