@@ -50,7 +50,7 @@ CLOUDINARY_STORAGE = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-moonchichii-woodhousep4-qh0oyyhaor6.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['woodhouse-a901e0e256cb.herokuapp.com']
 
 X_FRAME_OPTIONS = 'sameorigin'
 
