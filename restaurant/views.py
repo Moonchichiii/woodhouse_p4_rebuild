@@ -13,9 +13,9 @@ def index(request):
     key = settings.GOOGLE_API_KEY
     booking_form = BookingsForm()
     cancel_form = CancelBookingForm()
-    starters = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.STARTER)
-    main_course = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.MAIN_COURSE)
-    desserts = MenuChangeAndPrices.objects.filter(catecory=MenuChangeAndPrices.DESSERT)
+    starters = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.STARTER)
+    main_course = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.MAIN_COURSE)
+    desserts = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.DESSERT)
     context = {
         'key': key,
         'booking_form': booking_form,

@@ -11,5 +11,5 @@ class BookingsAdmin(admin.ModelAdmin):
 
 @admin.register(MenuChangeAndPrices)
 class MenuManager(admin.ModelAdmin):
-    list_display = ('name', 'catecory')
-    list_filter = ('catecory',)
+    list_display = ('name', 'category')
+    list_filter = ('category',)
