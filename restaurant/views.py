@@ -2,33 +2,31 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.conf import settings
 from django import forms
 from django.contrib import messages
-from restaurant.forms import BookingsForm, CancelBookingForm , ContactForm
+from restaurant.forms import BookingsForm, CancelBookingForm, ContactForm
 from restaurant.models import Bookings, MenuChangeAndPrices
 import requests
-
-
 
 
 # Create your views here.
 
 def index(request):
-    
+
     key = settings.GOOGLE_API_KEY
     booking_form = BookingsForm()
     cancel_form = CancelBookingForm()
     starters = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.STARTER)
     main_course = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.MAIN_COURSE)
-    desserts = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.DESSERT)    
+    desserts = MenuChangeAndPrices.objects.filter(category=MenuChangeAndPrices.DESSERT)
     contactus = ContactForm()
     context = {
         'key': key,
         'booking_form': booking_form,
-        'cancel_form': cancel_form,        
-        'starters' : starters,
-        'main_course' : main_course,
-        'desserts' : desserts,
-        'contactusform' : contactus
-        
+        'cancel_form': cancel_form,
+        'starters': starters,
+        'main_course': main_course,
+        'desserts': desserts,
+        'contactusform': contactus
+
     }
     return render(request, 'restaurant/index.html', context)
 
@@ -39,11 +37,11 @@ def booking_template(request):
         if form.is_valid():
             booking = form.save()
             return redirect('booking_confirmation', booking_id=booking.id)
-    
+
         else:
-            messages.error(request,"Sorry fully booked! Please choose another time or date.")                    
+            messages.error(request, "Sorry fully booked! Please choose another time or date.")
     else:
-        form = BookingsForm()        
+        form = BookingsForm()
 
     context = {
         'booking_form': form
@@ -80,7 +78,7 @@ def cancelled_confirmation(request):
 
 
 def response_message(user_email):
-    
+
     mailgun_domain = settings.ANYMAIL['MAILGUN_SENDER_DOMAIN']
     mailgun_api_key = settings.ANYMAIL['MAILGUN_API_KEY']
     mailgun_from_email = settings.DEFAULT_FROM_EMAIL
@@ -92,7 +90,6 @@ def response_message(user_email):
               "to": [user_email],
               "subject": "Thank you for contacting us!",
               "text": "We received your message and will get back to you, as soon as possible."})
-                            
 
 
 def contactus(request):
@@ -106,5 +103,3 @@ def contactus(request):
     else:
         form = ContactForm()
     return render(request, 'modal_contactus.html', {'contactusform': form})
-
-
