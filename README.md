@@ -3,10 +3,7 @@
 ***👉  [Link to Live project](https://woodhouse-a901e0e256cb.herokuapp.com)***
 
 ---
-***Link to the initial project (Abandoned due to numerous initial mistakes)***
-- [Initial Project](https://github.com/Moonchichiii/woodhouse_p4)
 
----
 ## Table of Contents
  
  1. [Site Owner Goals](#site-owner-goals)
